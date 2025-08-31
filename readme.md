@@ -1,3 +1,27 @@
+# Implementação do algoritmo BRKGA
+Algoritmo proposto no artigo:
+
+GONÇALVES, José Fernando; RESENDE, Mauricio G.C. A biased random key genetic
+algorithm for 2D and 3D bin packing problems. International Journal of Production
+Economics, 2013
+
+## Instruções
+Use make para compilar e make run ou ./binpacking3d (caso queira adicionar flags)
+
+## Flags
+
+- `-n <num>`: Número de caixas (padrão: 100)
+- `-g <num>`: Número de gerações do BRKGA (padrão: 200)
+- `-p <num>`: Tamanho da população (padrão: 30*n)
+- `-e <num>`: Número de elites (padrão: 0.1*p)
+- `-mut <num>`: Número de mutantes (padrão: 0.15*p)
+- `-prob <float>`: Probabilidade de crossover elite (padrão: 0.7)
+- `-patience <num>`: Paciência para early stopping (padrão: 10)
+-  `-t <num>`: define o tipo das instancias [1-8] (ver artigo)
+- `-h`: Ajuda.
+
+Estão descritas abaixo cada uma das classes e métodos da implementação:
+
 ## Instance Generator
 
 Gera as instâncias de acordo com as definições do artigo:
@@ -145,25 +169,3 @@ Retorna o array de EMS's do bin
 
 ## Main
 Na função main são definidos os parametros iniciais, interpretadas as flags e instanciadas as caixas com o método generate instances e criado um objeto do tipo BRKGA e chamado seu método fit para iniciar o processamento, Ao final é mostrado o resultado
-
-## Flags
-
-- `-n <num>`: Número de caixas (padrão: 100)
-- `-g <num>`: Número de gerações do BRKGA (padrão: 200)
-- `-p <num>`: Tamanho da população (padrão: 30*n)
-- `-e <num>`: Número de elites (padrão: 0.1*p)
-- `-mut <num>`: Número de mutantes (padrão: 0.15*p)
-- `-prob <float>`: Probabilidade de crossover elite (padrão: 0.7)
-- `-patience <num>`: Paciência para early stopping (padrão: 10)
--  `-t <num>`: define o tipo das instancias [1-8] (ver artigo)
-- `-h`: Ajuda.
-
-
-## Paralelização
-- Cada indivíduo de uma geração será processado paralelamente
-- Possibilita mais inidiviuos em uma mesma geração
-- Ao fim de cada geração os dados são avaliados novamente na CPU, instanciada a nova geração, que vai para a GPU novamente
-- Métodos que devem ser alterados 
-- Bin:: Update
-- Placement_Procedure:: Placement
-- Métodos auxiliares
