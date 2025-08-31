@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -g
-TARGET = binpacking3d
+TARGET = BRKGA
 SOURCES = main.cpp BinPacking3D.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 HEADERS = BinPacking3D.hpp
