@@ -6,7 +6,7 @@ algorithm for 2D and 3D bin packing problems. International Journal of Productio
 Economics, 2013
 
 ## Instruções
-Use make para compilar e make run ou ./binpacking3d (caso queira adicionar flags)
+Use make para compilar e make run ou ./BRKGA (caso queira adicionar flags)
 
 ## Flags
 
